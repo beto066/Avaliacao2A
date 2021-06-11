@@ -6,7 +6,7 @@ public class Pagamento {
 
     private float valor;
     private Date dataPagamento;
-    private TipoPagamento tipoPagamento;
+    private String tipoPagamento;
 
     public float getValor() {
         return valor;
@@ -24,18 +24,18 @@ public class Pagamento {
         this.dataPagamento = dataPagamento;
     }
 
-    public TipoPagamento getTipoPagamento() {
+    public String getTipoPagamento() {
         return tipoPagamento;
     }
 
-    public void setTipoPagamento(TipoPagamento tipoPagamento) {
+    public void setTipoPagamento(String tipoPagamento) {
         this.tipoPagamento = tipoPagamento;
     }
 
     public Pagamento() {
     }
 
-    public Pagamento(float valor, Date dataPagamento, TipoPagamento tipoPagamento) {
+    public Pagamento(float valor, Date dataPagamento, String tipoPagamento) {
         super();
         this.valor = valor;
         this.dataPagamento = dataPagamento;

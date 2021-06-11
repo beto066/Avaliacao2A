@@ -3,22 +3,13 @@ package prova_A2;
 import java.util.Date;
 import java.util.List;
 
-public class Pedido implements CRUD<Pedido> {
+public class Pedido{
 
-    private Integer id;
     private float valorTotal;
-    private Produto produto;
+    private String produto;
     private Pagamento pagamento;
     private Cliente cliente;
     private Funcionario funcionario;
-
-    public Integer getId() {
-        return this.id;
-    }
-
-    public void setData(Integer id) {
-        this.id = id;
-    }
 
     public float getValorTotal() {
         return valorTotal;
@@ -28,11 +19,11 @@ public class Pedido implements CRUD<Pedido> {
         this.valorTotal = valorTotal;
     }
 
-    public Produto getProduto() {
+    public String getProduto() {
         return produto;
     }
 
-    public void setProduto(Produto produto) {
+    public void setProduto(String produto) {
         this.produto = produto;
     }
 
@@ -63,10 +54,9 @@ public class Pedido implements CRUD<Pedido> {
     public Pedido() {
     }
 
-    public Pedido(Integer id, float valorTotal, Produto produto, Pagamento pagamento, Cliente cliente,
+    public Pedido(Integer id, float valorTotal, String produto, Pagamento pagamento, Cliente cliente,
             Funcionario funcionario) {
         super();
-        this.id = id;
         this.valorTotal = valorTotal;
         this.produto = produto;
         this.pagamento = pagamento;
@@ -76,7 +66,7 @@ public class Pedido implements CRUD<Pedido> {
 
     @Override
     public String toString() {
-        return "Pedido [getData()=" + getId() + ", getValorTotal()=" + getValorTotal() + ", getCliente()="
+        return "Pedido [" + ", getValorTotal()=" + getValorTotal() + ", getCliente()="
                 + getCliente() + ", getFuncionario()=" + getFuncionario() + "]";
     }
 
@@ -84,39 +74,18 @@ public class Pedido implements CRUD<Pedido> {
 
     }
 
-    @Override
     public void incluir() {
         System.out.println("Informe o valor do produto: ");
         this.valorTotal = Main.scan.nextInt();
         System.out.println("Informe ");
     }
 
-    @Override
     public void alterar() {
         // TODO Auto-generated method stub
 
     }
 
-    @Override
     public void excluir(List<Pedido> lista) {
         lista.removeIf(p -> (p.equals(this)));
     }
-
-    @Override
-    public void imprimirTudo(List<Pedido> lista) {
-        lista.forEach(p -> System.out.println(p));
-    }
-
-    @Override
-    public void imprimirOrdenado(List<Pedido> lista) {
-        lista.stream().sorted((p1,p2) -> p1.getId().compareTo(p2.getId()))
-                .forEach(p -> System.out.println(p));
-    }
-
-    @Override
-    public void imprimirFiltro(List<Pedido> lista, Object produto) {
-        lista.stream().filter(p -> p.produto.getNome().equals(produto))
-                .forEach(p -> System.out.println(p));
-    }
-
 }
