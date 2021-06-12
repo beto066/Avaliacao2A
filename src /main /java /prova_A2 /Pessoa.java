@@ -55,9 +55,20 @@ public class Pessoa implements CRUD<Pessoa> {
         return "Pessoa [getCpf()=" + getCpf() + ", getNome()=" + getNome() + ", getEmail()=" + getEmail() + "]";
     }
 
-    public void loginUsuario() {
-
-    }
+    public Pessoa loginUsuario(List<Pessoa> lista) {
+		System.out.println("------------[Login]--------------");
+		System.out.println("Digite o email: ");
+		String email = Main.scan.next();
+		System.out.println("Digite a senha: ");
+		int senha = Main.scan.next().hashCode();
+		
+		for (Pessoa p : lista) {
+			if(p.getEmail().equalsIgnoreCase(email) && p.getSenha()==senha ) {
+				return p;
+			}
+		}
+		return null;
+	}
 
     @Override
     public void incluir() {
