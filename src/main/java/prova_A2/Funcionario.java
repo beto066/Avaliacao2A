@@ -88,7 +88,7 @@ public class Funcionario extends Pessoa {
 
     @Override
     public String toString() {
-        return "Funcionario [getSalario()=" + getSalario() + ", getComisao()=" + getComisao() + ", getCargo()="
+        return super.toString() + " getSalario()=" + getSalario() + ", getComisao()=" + getComisao() + ", getCargo()="
                 + getCargo() + ", getStatus()=" + getStatus() + "]";
     }
 
