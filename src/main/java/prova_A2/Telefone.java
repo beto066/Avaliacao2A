@@ -5,7 +5,7 @@ public class Telefone {
     private String ddd;
     private String numero;
     private String observacao;
-    private Boolean celular;
+    private TipoTelefone tipoTelefone;
     
     public static Telefone adcionaTelefone(){
         Telefone telefone = new Telefone();
@@ -15,8 +15,8 @@ public class Telefone {
         telefone.ddd = Main.scan.next();
         System.out.println("Numero: ");
         telefone.numero = Main.scan.next();
-        System.out.println("É um celular? 1_ SIM   2_ NÃO");
-        telefone.celular = (Main.scan.nextInt() == 1);
+        System.out.println("Quel o tupo do telefone? 1_ telefone fixo  2_ telefone movel");
+        telefone.tipoTelefone = TipoTelefone.valueOf(Main.scan.nextInt());
         System.out.println("Observações sobre o celular: ");
         telefone.observacao = Main.scan.next();
         
@@ -47,20 +47,20 @@ public class Telefone {
         this.observacao = observacao;
     }
 
-    public Boolean getCelular() {
-        return celular;
+    public TipoTelefone getCelular() {
+        return tipoTelefone;
     }
 
-    public void setCelular(Boolean celular) {
-        this.celular = celular;
+    public void setTipoTelefone(int id) {
+        this.tipoTelefone = TipoTelefone.valueOf(id);
     }
 
-    public Telefone(String ddd, String numero, String observacao, Boolean celular) {
+    public Telefone(String ddd, String numero, String observacao, int id) {
         super();
         this.ddd = ddd;
-        this.numero = numero;
+    this.numero = numero;
         this.observacao = observacao;
-        this.celular = celular;
+        this.tipoTelefone = TipoTelefone.valueOf(id);
     }
 
     public Telefone() {
@@ -71,5 +71,4 @@ public class Telefone {
         return "Telefone [getDdd()=" + getDdd() + ", getNumero()=" + getNumero() + ", getObservacao()="
                 + getObservacao() + ", getCelular()=" + getCelular() + "]";
     }
-
 }
