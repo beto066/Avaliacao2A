@@ -5,6 +5,30 @@ public class Cliente extends Pessoa {
     private String fidelidade;
     private Boolean devedor;
     private int valorDevedor;
+    
+    @Override
+    public void alterar(int id) {
+        super.alterar(id);
+
+        switch (id) {
+            case 6:
+                System.out.println("Quantas compras o cliente fez? ");
+                this.fidelidade = Main.scan.next();
+                break;
+            case 7:
+                System.out.println("O cliente é devedor? 1_ SIM  2_ NÃO  ");
+                this.devedor = (Main.scan.nextInt() == 1);
+                this.valorDevedor = 0;
+                break;
+            case 8:
+                if (!devedor) {
+                    System.out.println("O cliente não é devedor!  ");
+                } else {
+                    System.out.println("Quanto o cliente deve? ");
+                    this.valorDevedor = Main.scan.nextInt();
+                }
+        }
+    }
 
     public String getFidelidade() {
         return fidelidade;
