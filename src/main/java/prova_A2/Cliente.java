@@ -64,9 +64,9 @@ public class Cliente extends Pessoa {
         // TODO Auto-generated constructor stub
     }
 
-    @Override
+   @Override
     public String toString() {
-        return "Cliente [getFidelidade()=" + getFidelidade() + ", getDevedor()=" + getDevedor() + ", getValorDevedor()="
+        return super.toString() + " getFidelidade()=" + getFidelidade() + ", getDevedor()=" + getDevedor() + ", getValorDevedor()="
                 + getValorDevedor() + "]";
     }
 
