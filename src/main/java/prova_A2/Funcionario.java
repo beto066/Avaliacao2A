@@ -6,6 +6,43 @@ public class Funcionario extends Pessoa {
     private int comisao;
     private int cargo;
     private String status;
+    
+    @Override
+    public void alterar(int id) {
+        super.alterar(id);
+        
+        switch(id){
+            case 6:
+                System.out.println("Iforme o salario: ");
+                this.salario = Main.scan.nextInt();
+                break;
+            case 7:
+                System.out.println("Informe a comisssão: ");
+                this.comisao = Main.scan.nextInt();
+                break;
+            case 8:
+                System.out.println("Informe o cargo: ");
+                this.cargo = Main.scan.next();
+                break;
+            case 9:
+                System.out.println("Informe o status: ");
+                this.status = Main.scan.next();
+                break;
+        }
+    }
+
+    @Override
+    public void incluir() {
+        super.incluir();
+        System.out.println("Salario: ");
+        this.salario = Main.scan.nextInt();
+        System.out.println("Informe a Comisssão: ");
+        this.comisao = Main.scan.nextInt();
+        System.out.println("Cargo: ");
+        this.cargo = Main.scan.next();
+        System.out.println("Status: ");
+        this.status = Main.scan.next();
+    }
 
     public int getSalario() {
         return salario;
